@@ -1,0 +1,561 @@
+/* ==========================================================================
+   VBL — "Who We Are" page styles
+   ========================================================================== */
+
+/* -------------------------------------------------------------------------
+   Page hero (static image, no video)
+   ------------------------------------------------------------------------- */
+.hero--page .hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.06);
+  animation: hero-zoom 16s var(--ease) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero--page .hero__media img {
+    animation: none;
+    transform: scale(1);
+  }
+}
+
+.hero--page .hero__title {
+  margin-bottom: 1.25rem;
+}
+
+.hero__lead {
+  max-width: 36rem;
+  margin-bottom: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(1rem, 1.4vw, 1.0625rem);
+  line-height: 1.7;
+  color: var(--color-text-on-dark-muted);
+}
+
+/* -------------------------------------------------------------------------
+   We Are Not a Volume Contractor
+   ------------------------------------------------------------------------- */
+.not-volume__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(2.5rem, 6vw, 5rem);
+}
+
+.not-volume__content .section-lead:not(:last-child) {
+  margin-bottom: 1.25rem;
+}
+
+.not-volume__media .media-frame {
+  aspect-ratio: 986 / 614;
+}
+
+/* -------------------------------------------------------------------------
+   Credentials & Scale
+   ------------------------------------------------------------------------- */
+.credentials__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--color-border-light);
+  margin-bottom: clamp(2.5rem, 6vw, 4rem);
+}
+
+.credentials__item {
+  padding: clamp(1.75rem, 3vw, 2.5rem);
+}
+
+.credentials__item:not(:nth-child(3n)) {
+  border-right: 1px solid var(--color-border-light);
+}
+
+.credentials__item:nth-child(-n+3) {
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.credentials__number {
+  margin-bottom: 0.5rem;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 500;
+  line-height: 1;
+  color: var(--color-green-900);
+}
+
+.credentials__label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-green-800);
+}
+
+.credentials__summary {
+  max-width: 56rem;
+  font-size: clamp(1.125rem, 2vw, 1.375rem);
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--color-green-900);
+}
+
+.credentials__rule {
+  position: relative;
+  height: 1px;
+  margin-top: clamp(2.5rem, 6vw, 4rem);
+  background-color: var(--color-border-light);
+}
+
+.credentials__rule::before,
+.credentials__rule::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 0.4375rem;
+  height: 0.4375rem;
+  transform: translateY(-50%);
+  background-color: var(--color-green-900);
+}
+
+.credentials__rule::before {
+  left: 0;
+}
+
+.credentials__rule::after {
+  right: 0;
+}
+
+/* -------------------------------------------------------------------------
+   Capital Is Not Expendable (Execution Philosophy)
+   ------------------------------------------------------------------------- */
+.philosophy-capital__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(2.5rem, 6vw, 5rem);
+}
+
+.philosophy-capital__content .section-lead:not(:last-child) {
+  margin-bottom: 1.25rem;
+}
+
+.philosophy-capital__media {
+  position: relative;
+}
+
+.philosophy-capital__media .media-frame {
+  aspect-ratio: 896 / 706;
+}
+
+/* -------------------------------------------------------------------------
+   Structure Is Not Bureaucracy (Governance & Compliance)
+   ------------------------------------------------------------------------- */
+.governance__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(2.5rem, 6vw, 5rem);
+}
+
+.governance__content .section-lead:not(:last-child) {
+  margin-bottom: 1.25rem;
+}
+
+.governance__media {
+  position: relative;
+}
+
+.governance__media .media-frame {
+  aspect-ratio: 1277 / 898;
+}
+
+/* -------------------------------------------------------------------------
+   Leadership
+   ------------------------------------------------------------------------- */
+.leadership__head .section-lead {
+  max-width: 40rem;
+}
+
+.leadership__carousel {
+  position: relative;
+  margin-top: clamp(2.5rem, 6vw, 4rem);
+}
+
+.leadership__track {
+  display: flex;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.leadership__track::-webkit-scrollbar {
+  display: none;
+}
+
+.team-card {
+  flex: 0 0 auto;
+  width: calc((100% - 2 * clamp(1.5rem, 3vw, 2.5rem)) / 3);
+  scroll-snap-align: start;
+}
+
+.team-card .media-frame {
+  aspect-ratio: 480 / 568;
+  margin-bottom: 1.25rem;
+}
+
+.team-card__placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.32);
+}
+
+.team-card__placeholder svg {
+  width: 30%;
+  height: 30%;
+}
+
+.team-card__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.team-card__name {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--color-green-900);
+}
+
+.team-card__expand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  flex-shrink: 0;
+  border: 1px solid var(--color-border-light);
+  background-color: transparent;
+  color: var(--color-green-900);
+  transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.team-card__expand svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.team-card__expand:hover,
+.team-card__expand:focus-visible {
+  background-color: var(--color-green-900);
+  color: var(--color-white);
+  border-color: var(--color-green-900);
+}
+
+.team-card__role {
+  margin-bottom: 0.5rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-green-800);
+}
+
+.team-card__contact {
+  display: block;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--color-green-800);
+  transition: color var(--transition-fast);
+}
+
+.team-card__contact:hover,
+.team-card__contact:focus-visible {
+  color: var(--color-green-900);
+}
+
+.leadership__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+.leadership__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  flex-shrink: 0;
+  border: 1px solid var(--color-border-light);
+  background-color: transparent;
+  color: var(--color-green-900);
+  transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.leadership__arrow svg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.leadership__arrow:hover,
+.leadership__arrow:focus-visible {
+  background-color: var(--color-green-900);
+  color: var(--color-white);
+  border-color: var(--color-green-900);
+}
+
+/* -------------------------------------------------------------------------
+   Leadership bio modal / lightbox
+   ------------------------------------------------------------------------- */
+.team-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1.25rem, 4vw, 3rem);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-base), visibility var(--transition-base);
+}
+
+.team-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.team-modal__overlay {
+  position: absolute;
+  inset: 0;
+  border: none;
+  padding: 0;
+  background-color: rgba(12, 18, 16, 0.7);
+}
+
+.team-modal__dialog {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 22rem) 1fr;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  width: min(100%, 56rem);
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  background-color: var(--color-white);
+  transform: translateY(1.5rem);
+  opacity: 0;
+  transition: transform var(--transition-base), opacity var(--transition-base);
+}
+
+.team-modal.is-open .team-modal__dialog {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.team-modal__close {
+  position: absolute;
+  top: clamp(1rem, 2vw, 1.5rem);
+  right: clamp(1rem, 2vw, 1.5rem);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid var(--color-border-light);
+  background-color: var(--color-white);
+  color: var(--color-green-900);
+  transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.team-modal__close svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.team-modal__close:hover,
+.team-modal__close:focus-visible {
+  background-color: var(--color-green-900);
+  color: var(--color-white);
+  border-color: var(--color-green-900);
+}
+
+.team-modal__media {
+  aspect-ratio: 480 / 568;
+}
+
+.team-modal__name {
+  margin-bottom: 0.5rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--color-green-900);
+}
+
+.team-modal__role {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-green-800);
+}
+
+.team-modal__contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin-bottom: clamp(1.5rem, 3vw, 2rem);
+  font-size: 0.9375rem;
+}
+
+.team-modal__contact a {
+  color: var(--color-green-800);
+  transition: color var(--transition-fast);
+}
+
+.team-modal__contact a:hover,
+.team-modal__contact a:focus-visible {
+  color: var(--color-green-900);
+}
+
+.team-modal__bio {
+  max-width: 32rem;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-green-800);
+}
+
+/* -------------------------------------------------------------------------
+   Culture & Values
+   ------------------------------------------------------------------------- */
+.culture__grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: start;
+  gap: clamp(2.5rem, 6vw, 5rem);
+}
+
+.culture__list {
+  margin-top: clamp(2rem, 4vw, 3rem);
+  border-top: 1px solid var(--color-border-light);
+}
+
+.culture__item {
+  display: flex;
+  align-items: baseline;
+  gap: clamp(1rem, 2vw, 1.75rem);
+  padding-block: 1.25rem;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.culture__index {
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
+  color: var(--color-green-800);
+}
+
+.culture__title {
+  font-size: clamp(1.0625rem, 1.8vw, 1.25rem);
+  font-weight: 600;
+  color: var(--color-green-900);
+}
+
+.culture__summary {
+  max-width: 34rem;
+  margin-top: clamp(1.5rem, 3vw, 2.25rem);
+  font-size: clamp(1.0625rem, 1.8vw, 1.25rem);
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--color-green-900);
+}
+
+.culture__media {
+  position: relative;
+  margin-top: clamp(2rem, 6vw, 4rem);
+}
+
+.culture__media .media-frame {
+  aspect-ratio: 1140 / 816;
+}
+
+/* -------------------------------------------------------------------------
+   Responsive
+   ------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .team-card {
+    width: calc((100% - clamp(1.5rem, 3vw, 2.5rem)) / 2);
+  }
+}
+
+@media (max-width: 900px) {
+  .not-volume__grid,
+  .philosophy-capital__grid,
+  .governance__grid,
+  .culture__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .culture__media {
+    margin-top: 0;
+  }
+
+  .credentials__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .credentials__item:not(:nth-child(3n)) {
+    border-right: none;
+  }
+
+  .credentials__item:nth-child(-n+3) {
+    border-bottom: none;
+  }
+
+  .credentials__item:nth-child(odd) {
+    border-right: 1px solid var(--color-border-light);
+  }
+
+  .credentials__item:nth-child(-n+4) {
+    border-bottom: 1px solid var(--color-border-light);
+  }
+}
+
+@media (max-width: 768px) {
+  .team-card {
+    width: 100%;
+  }
+
+  .team-modal__dialog {
+    grid-template-columns: 1fr;
+  }
+
+  .team-modal__media {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+@media (max-width: 640px) {
+  .credentials__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .credentials__item:nth-child(odd) {
+    border-right: none;
+  }
+
+  .credentials__item:nth-child(-n+4) {
+    border-bottom: none;
+  }
+
+  .credentials__item:not(:last-child) {
+    border-bottom: 1px solid var(--color-border-light);
+  }
+
+  .culture__item {
+    flex-direction: column;
+    gap: 0.375rem;
+  }
+}
